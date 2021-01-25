@@ -1,0 +1,207 @@
+<script>
+
+class CreditCard { 
+     constructor(number){
+        this.number = number
+      //  document.write(number + " is " +  
+           //                 (isValid(number) ? 
+           //                                            "valid" : "invalid"))
+    } 
+  
+    // Return true if the card number is valid 
+     isValid( number) 
+    { 
+    return (getSize(this.number) >= 13 &&  
+            getSize(this.number) <= 16) &&  
+            (prefixMatched(this.number, 4) ||  
+            prefixMatched(this.number, 5) ||  
+            prefixMatched(this.number, 37) ||  
+            prefixMatched(this.number, 6)) &&  
+            ((sumOfDoubleEvenPlace(this.number) +  
+            sumOfOddPlace(this.number)) % 10 == 0); 
+    } 
+  
+    // Get the result
+    sumOfDoubleEvenPlace( number) 
+    { 
+         let sum = 0; 
+         var num = number + ""; 
+        for (var i = getSize(this.number) - 2; i >= 0; i -= 2)  
+            sum += getDigit((num[i] + "") * 2); 
+          
+        return sum; 
+    } 
+  
+    // Return this number if it is a single digit, otherwise, return the sum of the two digits 
+    getDigit( number) 
+    { 
+        if (number < 9) 
+            return number; 
+        return number / 10 + number % 10; 
+    } 
+  
+    // Return sum of odd-place digits in number 
+     sumOfOddPlace(number) 
+    { 
+        sum = 0; 
+        num = number + ""; 
+        for (var i = getSize(number) - 1; i >= 0; i -= 2)  
+            sum += (num[i] + "");      
+        return sum; 
+    } 
+  
+    // Return true if the digit d is a prefix for number 
+    prefixMatched( number, d) 
+    { 
+        return getPrefix(number, getSize(d)) == d; 
+    } 
+  
+    // Return the number of digits in d 
+    getSize(d) 
+    { 
+        var num = d + ""; 
+        return num.Length; 
+    } 
+  
+    // Return the first k number of digits from number. If the number of digits in number 
+    // is less than k, return number. 
+    getPrefix(number,   k) 
+    { 
+        if (getSize(number) > k)  
+        { 
+             var num = number + ""; 
+            return (num.Substring(0, k)); 
+        } 
+        return number; 
+    } 
+} 
+ let user = new CreditCard(6146496758938152) 
+ user.isValid()
+
+
+--------------------------------------------------------------------------------------------------
+
+
+let person ={
+     name:"jvt",
+     id:102,
+     class1:["hy",1,2,3],
+     person1:{
+         name:"sagar",
+         id:23,
+         class2:["jhg", "number",1,2,"hy",45,56,76,77,"pavan","ajit",3,4,5,"shymala","chanki","yas","varshita"],
+         
+     },
+     sum1:function(a,b){
+        return a+b;
+    }
+}
+
+//console.log(person.sum1(10,20));
+
+
+
+var arr = ["jhg", "number",1,2,"hy",45,56,76,77,"vari"];
+console.log(arr.length);
+console.log(arr[arr.length-1])
+
+//var len = person.person1.class2.length;
+console.log(person.person1.class2[person.person1.class2.length-3]);
+
+
+// function sum(a,b){
+//       return a+b;
+// }
+
+// console.log(sum(2,3));
+
+// let sum1 = function(a,b){
+//     return a+b;
+// }
+
+// console.log(sum1(2,3));
+
+// let sum2 = (a,b) => {
+//     return a+b;
+// }
+ 
+// console.log(sum2(2,3)); 
+let arr =[1,2,3,"hello"];
+console.log(arr[3]);
+
+let varshi = {
+    name:"varshita",
+    comp:"intime",
+    id:20,
+    getdetails(){
+            this.name = "priya";
+            var id =20;
+            
+            return id;
+    },
+    disp(){
+      // this.name 
+       console.log(this.name);
+    },
+    disp1(){
+        // this.id
+          console.log(this.id); 
+    },
+    fun : function(){
+        var name ="pulii";
+        var id =20;
+        return name+id;
+       // console.log(varshi.comp);
+    },
+    disp3(){
+        console.log(varshi.name);
+    }
+}
+
+console.log(varshi.name);
+//varshi.getdetails().id;
+varshi.getdetails();
+//console.log(varshi.disp())
+varshi.disp()
+varshi.disp1()
+console.log(varshi.fun())
+varshi.disp3();
+
+class varshit {
+    name="varshita";
+    comp="intime";
+    id=20;
+    getdetails(name){
+            this.name ="manasa";
+            var id =20;
+            return id;
+    };
+    disp(){
+      // this.name 
+       console.log(this.name);
+    };
+    disp1(){
+        // this.id
+          console.log(this.id); 
+    };
+    fun=function(){
+        var name ="pulii";
+        var id =20;
+        return name+id;
+       // console.log(varshi.comp);
+    };
+    disp3(){
+        console.log("hello");
+    }
+}
+let varshi = new varshit();
+console.log(varshi.name);
+//varshi.getdetails().id;
+varshi.getdetails();
+//console.log(varshi.disp())
+varshi.disp();
+varshi.disp1();
+console.log(varshi.fun());
+varshi.disp3();
+
+</script>
