@@ -77,10 +77,311 @@ class CreditCard {
 } 
  let user = new CreditCard(6146496758938152) 
  user.isValid()
+ 
+ //////////////////////////////////////// Human Emotions Codes ///////////////////////////////////////
+ 
+ class PersonalInfo{
+// constructor for initialisation purpose
+ static Family = "mishra"    
 
+constructor(firstname,lastname,company,age,city,state)
+{
+   this.FirstName = firstname
+   this.LastName = lastname
+   this.CompanyName = company
+   this.Age = age
+   this.City = city
+   this.State = state
+}
+  display(brotherfirstname,brothermiddlename,brotherlastname)
+{
+   this.BrotherFirstName = brotherfirstname
+   this.BrotherMiddleName = brothermiddlename
+   this.BrotherLastName = brotherlastname
+   return this.BrotherLastName
+}
+static accessstaticdata()
+{
+  console.log(PersonalInfo.Family)
+}
+}
+let stellar5 = new PersonalInfo("chanki","mishra","InTimeTec",24,"Allahabad","Uttar pradesh")
+  var lname = stellar5.display("sundaram","kumar", "mishra")
+   console.log(lname)
+      
+   PersonalInfo.accessstaticdata()
+   
+   ///////////////////////////////////// Human Emotions Codes /////////////////////////////////////////////
+   
+   function MobileInfo(totalmbdownloaded,mobiledownloadspeed,mobileuploadspeed)
+{
+  
+  if(totalmbdownloaded > 100)
+   {
+     return "Exceed"
+   }
+   else
+   {
+     return "Data is left"
+     }
+}
 
---------------------------------------------------------------------------------------------------
+let results = MobileInfo(121,30,32.06)
+ console.log(results)
+ 
+ //////////////////////////////////////// Human Emotions Codes ////////////////////////////////////////////////////
+ 
+ let employeedetails = {
+              setdata(name,designation,salary)
+              {
+                if(name == undefined)
+                  {
+                    console.log("Name Required")
+                  }
+                else if(designation == undefined)
+                  {
+                    console.log("Designation Required")
+                  }
+                else if(salary == undefined)
+                  {
+                    console.log("Provide Salary")
+                  }
+                else
+                 {
+                   this.EmployeeName = name
+                   this.JobRole = designation
+                   this.Salary = salary
+                 }              
+              },
+            showemployeedetails()
+            {
+              console.log(this.EmployeeName,this.JobRole,this.Salary)
+            }
+   }
+ employeedetails.setdata("chanki","Programmer",50000)
+ employeedetails.showemployeedetails()
+ employeedetails.setdata("chanki",undefined,24889)
+ 
+  /////////////////////////// Human Emotions Codes /////////////////////////////////////////////////////////////////
+  
+  class electricitybill
+ {  
+   
+   constructor(uname,pwd,cnumber,mode,bank,units)
+   {
+     this.username = uname
+     this.password = pwd
+     this.modeofpayment = mode
+     this.bankname = bank
+     this.unitsconsumed = units
+     this.consumernumber = cnumber
+   }
+   calculatebill()
+   {
+       if(this.unitsconsumed < 100)
+       {
+         this.cost = this.unitsconsumed *1.5
+       }
+       else if(this.unitsconsumed > 100 && this.unitsconsumed < 300)
+       {
+         this.cost = 150 + ((this.unitsconsumed - 100)*2.5)
+       }
+       else if(this.unitsconsumed > 300 && this.unitsconsumed < 500)
+       {
+         this.cost = 650 + ((this.unitsconsumed - 300)*4.5)
+       }
+       else
+       {
+         this.cost = 1550 + ((this.unitsconsumed - 500)*6)
+       }
+   }
+   showbill()
+   {
+    console.log("Electricity Bill To be paid" + this.cost)
+   }
+ }
+ let terminator= new electricitybill("Chanki Mishra","chanki@ymail12",234571625,"net banking","sbi",370)
+ terminator.calculatebill()
+ terminator.showbill()
+ 
+ //////////////////////////////////////////// Human Emotions Codes ///////////////////////////////////////////////////
+ 
+ class Employeeaddressproof
+{
+  constructor(name,age,gen,mailid,id,idnum)
+  {
+    this.empname = name
+    this.age = age
+    this.gender = gen
+    this.emailid = mailid
+    this.idproof = id
+    this.idproofnumber = idnum  
+  }
+  checkidcard() 
+  {
+    if(this.idproof == "voter id" || this.idproof == "ration card")
+    {
+      return 1
+    }
+    else
+    {
+      return 0
+    }
+  }
+}
+let madison = new Employeeaddressproof("JVT",5,"Male","info@jvtechnologies.co.in","voter id","ASUSPB560F")
+  var result = madison.checkidcard();
+  if(result == 1)
+  {
+    console.log("Your response has been submitted")
+  }
+  else
+   {
+    console.log("Provide either voter id or ration card")
+   }
+   
+ ///////////////////////////////////////// Human Emotions Codes ////////////////////////////////////////////////
+ 
+ class mail
+{
+   constructor(sname,semail,recname,recmail,day,date)
+  {
+    this.sendername = sname
+    this.senderemailid = semail
+    this.receivername = recname
+    this.receiveremailid = recmail
+    this.dayofmail = day
+    this.dateofmail = date
+  }
+  checkmailid()
+  {
+    if(this.senderemailid == "kasi.sivap@gmail.com" && this.receiveremailid == "venkatesh.db@gmail.com")
+    {
+      console.log("Mail sent successfully")
+    }
+    else
+    {
+      console.log("Invalid emailid")
+    }
+  }
+}
+let dt3 = new mail("siva prasad","kasi.sivap@gmail.com","D b venkatesh","venkatesh.db@gmail.com","friday","Nov 27,2015")
+    dt3.checkmailid();
+let dt4 = new mail("chanki mishra","chanki@gmail.com","ashnil","ashnil@gmail.com","friday","Nov 6,2019")
+    dt4.checkmailid();  
+    
+/////////////////////////////////// Human Emotions Codes ///////////////////////////////////////////////////////////
 
+    class Foodbill
+{ 
+  constructor(order,quant,order1,quant1,order2,quant2)
+  {
+    this.firstorder = order
+    this.firstorderquantity = quant
+    this.secondorder = order1
+    this.secondorderquantity = quant1
+    this.thirdorder = order2
+    this.thirdorderquantity = quant2
+
+  }
+   calculateprice() 
+   {
+      if(this.firstorder == "Butter roti")
+      {
+        this.Rateofbutterroti = 65
+        this.butterroticost = 65 * this.firstorderquantity
+      }
+      if(this.secondorder == "Masala Papad")
+      {
+        this.Rateofmasalapapad = 75
+        this.masalapapadcost = 75 * this.secondorderquantity
+      }
+      if(this.thirdorder == "Paneer Kadai")
+      {
+        this.Rateofpaneerkadai = 325
+        this.paneerkadaicost = 325 * this.thirdorderquantity
+      }
+      this.amounttobepaid = this.butterroticost + this.masalapapadcost+this.paneerkadaicost
+      this.totalquantity = this.firstorderquantity+this.secondorderquantity+this.thirdorderquantity
+      this.servicecharge = 73.50
+      this.VAT = 77
+      this.servicetax = 36.50
+      this.totalamounttobepaid = this.amounttobepaid + (this.servicetax+this.VAT+this.servicecharge)
+   }
+   showbill()
+     {
+        console.log("TotalQuantity :"+ this.totalquantity+"service tax :"+this.servicetax+"VAT :"+this.VAT+"Service charge"+this.servicecharge)
+        console.log("Total Amount :" + this.totalamounttobepaid)
+
+    }   
+
+}
+
+let stellar = new Foodbill("Butter roti",4,"Masala Papad",3,"Paneer Kadai",1)
+stellar.calculateprice()
+stellar.showbill()
+
+/////////////////////////////////////////// Human Emotions Codes ///////////////////////////////////////////
+
+class  Appearance{
+
+constructor(weight,height,gender,address,personalnumber,homenumber,state,country)
+{
+   this.Weight = weight                  
+   this.Height = height
+   this.Gender = gender
+   this.Address = address
+   this.PersonalNumber = personalnumber
+   this.Homenumber = homenumber
+   this.State = state
+   this.Country = country
+}
+
+}
+
+let stellar1 = new Appearance("50kg",5,"Black","Female","Doddakannalli",8340381395,78378726357,"Karnataka","India")
+let stellar2 = new Appearance("60kg",7,"Grey","Male","BTM",53663562635,7677881727388,"Karnataka","India")
+console.log(stellar1.Weight)
+ 
+ /////////////////////////////////////// Human Emotions COdes //////////////////////////////////////////
+ 
+ class TheatreInformation{
+
+constructor(theatrename,screen,moviename,certification,clas,pricepertkt,numberoftkt,seatnumbers,totalamount)
+{
+  this.TheatreName = theatrename
+  this.Screen = screen
+  this.MovieName = moviename
+  this.MovieCertification = certification
+  this.classy = clas
+  this.PricePerTicket = pricepertkt
+  this.NumberOfTkt = numberoftkt
+  this.SeatNumbers = seatnumbers
+  this.TotalAmount = totalamount
+}
+DisplayInformation()
+{
+ console.log(this.TheatreName,this.Screen,this.MovieName,this.TotalAmount)
+}
+DisplayGreetings()
+{
+  if(this.TotalAmount >500)
+  { 
+  return "expensive"
+  }
+  else
+  {
+   return "Good deal"
+  }
+}
+}
+let stellar3 = new TheatreInformation("PSS Multiplex","Screen 3","jvt[c,cpp]","u","first","Rs 1000",5,"c1,c2,c3,c4,c5",1050)
+    stellar3.DisplayInformation()
+var stellar4 = stellar3.DisplayGreetings()
+console.log(stellar4)
+
+ 
+ /////////////////////////// Human Emotions Codes /////////////////////////////////////////////////////////////////
 
 let person ={
      name:"jvt",
